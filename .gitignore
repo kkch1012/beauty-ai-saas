@@ -1,0 +1,105 @@
+# Dependencies
+node_modules/
+.pnp/
+.pnp.js
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+.venv/
+ENV/
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Flutter
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+*.iml
+
+# iOS
+flutter_app/ios/Pods/
+flutter_app/ios/.symlinks/
+flutter_app/ios/Flutter/Flutter.framework
+flutter_app/ios/Flutter/Flutter.podspec
+flutter_app/ios/Flutter/Generated.xcconfig
+flutter_app/ios/Flutter/app.flx
+flutter_app/ios/Flutter/flutter_assets/
+flutter_app/ios/Flutter/flutter_export_environment.sh
+flutter_app/ios/ServiceDefinitions.json
+flutter_app/ios/Runner/GeneratedPluginRegistrant.*
+
+# macOS
+flutter_app/macos/Pods/
+flutter_app/macos/.symlinks/
+flutter_app/macos/Flutter/Flutter.framework
+flutter_app/macos/Flutter/ephemeral/
+
+# Android
+flutter_app/android/.gradle/
+flutter_app/android/app/build/
+flutter_app/android/build/
+flutter_app/android/local.properties
+*.apk
+*.aab
+
+# Next.js
+admin_web/.next/
+admin_web/out/
+admin_web/node_modules/
+
+# AI Server
+ai_server/models/
+ai_server/generated_samples/
+ai_server/*.pth
+ai_server/*.safetensors
+ai_server/*.bin
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+coverage/
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Misc
+*.bak
+*.tmp
+*.temp
+Thumbs.db
+
+# Supabase
+supabase/.branches/
+supabase/.temp/
