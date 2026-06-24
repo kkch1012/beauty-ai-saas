@@ -1,7 +1,9 @@
-'use client'
-
 import { Search, Download, Wallet, TrendingUp, RotateCcw } from 'lucide-react'
-import { payments, type PaymentStatus } from '@/lib/mock-data'
+import { getPayments } from '@/lib/data'
+import { DataBadge } from '@/components/data-badge'
+import type { PaymentStatus } from '@/lib/mock-data'
+
+export const dynamic = 'force-dynamic'
 
 const statusStyle: Record<PaymentStatus, string> = {
   paid: 'bg-green-100 text-green-700',
@@ -16,7 +18,9 @@ const statusLabel: Record<PaymentStatus, string> = {
   refunded: '환불',
 }
 
-export default function PaymentsPage() {
+export default async function PaymentsPage() {
+  const payments = await getPayments()
+
   const paidTotal = payments.filter((p) => p.status === 'paid').reduce((s, p) => s + p.amount, 0)
   const refundedTotal = payments.filter((p) => p.status === 'refunded').reduce((s, p) => s + p.amount, 0)
   const paidCount = payments.filter((p) => p.status === 'paid').length
@@ -31,7 +35,10 @@ export default function PaymentsPage() {
     <div className="p-8">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">결제 내역</h1>
+          <div className="flex items-center gap-3">
+            <h1 className="text-2xl font-bold text-gray-900">결제 내역</h1>
+            <DataBadge />
+          </div>
           <p className="text-sm text-gray-500 mt-1">2025년 6월 구독 및 결제 현황</p>
         </div>
         <button className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-600 bg-white border border-gray-200 rounded-lg hover:bg-gray-50">

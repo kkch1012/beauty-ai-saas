@@ -1,7 +1,9 @@
-'use client'
-
 import { Search, Filter, Download } from 'lucide-react'
-import { members, type SubscriptionTier, type SubscriptionStatus } from '@/lib/mock-data'
+import { getMembers } from '@/lib/data'
+import { DataBadge } from '@/components/data-badge'
+import type { SubscriptionTier, SubscriptionStatus } from '@/lib/mock-data'
+
+export const dynamic = 'force-dynamic'
 
 const tierStyle: Record<SubscriptionTier, string> = {
   premium: 'bg-purple-100 text-purple-700',
@@ -27,12 +29,17 @@ const statusLabel: Record<SubscriptionStatus, string> = {
   expired: '만료',
 }
 
-export default function MembersPage() {
+export default async function MembersPage() {
+  const members = await getMembers()
+
   return (
     <div className="p-8">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">회원 관리</h1>
+          <div className="flex items-center gap-3">
+            <h1 className="text-2xl font-bold text-gray-900">회원 관리</h1>
+            <DataBadge />
+          </div>
           <p className="text-sm text-gray-500 mt-1">전체 {members.length}개 가맹점</p>
         </div>
         <button className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-600 bg-white border border-gray-200 rounded-lg hover:bg-gray-50">

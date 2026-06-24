@@ -1,14 +1,21 @@
-'use client'
-
 import { Star, Globe, Plus } from 'lucide-react'
-import { designs, designCategoryLabel } from '@/lib/mock-data'
+import { getDesigns } from '@/lib/data'
+import { DataBadge } from '@/components/data-badge'
+import { designCategoryLabel } from '@/lib/mock-data'
 
-export default function DesignsPage() {
+export const dynamic = 'force-dynamic'
+
+export default async function DesignsPage() {
+  const designs = await getDesigns()
+
   return (
     <div className="p-8">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">디자인 관리</h1>
+          <div className="flex items-center gap-3">
+            <h1 className="text-2xl font-bold text-gray-900">디자인 관리</h1>
+            <DataBadge />
+          </div>
           <p className="text-sm text-gray-500 mt-1">눈썹 디자인 라이브러리 · {designs.length}개</p>
         </div>
         <button className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-purple-600 rounded-lg hover:bg-purple-700">
