@@ -3,7 +3,7 @@
 AI 기반 눈썹 시뮬레이션 + 전자계약을 통합한 반영구 화장 전문샵용 SaaS 솔루션입니다.
 Flutter 태블릿 앱 · Next.js 관리자 웹 · Python AI 서버 · Supabase 백엔드로 구성된 풀스택 모노레포입니다.
 
-> **🔗 라이브 데모 (관리자 웹):** https://adminweb-one-psi.vercel.app
+> **🔗 라이브 데모 (관리자 웹):** https://beauty-admin-web.vercel.app
 
 ---
 
